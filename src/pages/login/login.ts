@@ -5,6 +5,12 @@ import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import { User } from '../../providers';
 import { MainPage } from '../';
 
+import firebase from 'firebase';
+
+
+
+import { ServicioService } from "../../servicio.service";
+
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -25,13 +31,22 @@ export class LoginPage {
   constructor(public navCtrl: NavController,
     public user: User,
     public toastCtrl: ToastController,
-    public translateService: TranslateService) {
+    public translateService: TranslateService,
+    public servicio: ServicioService
+  ) {
 
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
       this.loginErrorString = value;
     })
   }
-
+  login() {
+    let toast = this.toastCtrl.create({
+      message: 'Login done',
+      duration: 3000,
+      position: 'top'
+    });
+    toast.present();
+  }
   // Attempt to login in through our User service
   doLogin() {
     this.user.login(this.account).subscribe((resp) => {

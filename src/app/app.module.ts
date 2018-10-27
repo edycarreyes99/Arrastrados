@@ -9,6 +9,20 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+//@angular/Fire & Firebase imports
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireStorageModule } from "@angular/fire/storage";
+import * as firebase from 'firebase';
+
+//Servicio Service Import
+import { ServicioService } from "../servicio.service";
+
+//Third Part Login Imports
+import { GooglePlus } from "@ionic-native/google-plus";
+
 import { Items } from '../mocks/providers/items';
 import { Settings, User, Api } from '../providers';
 import { MyApp } from './app.component';
@@ -33,6 +47,25 @@ export function provideSettings(storage: Storage) {
     option4: 'Hello'
   });
 }
+firebase.initializeApp({
+  apiKey: "AIzaSyAwnufxibhSVmD2Zu5mI_9x0WoFmQ0KctY",
+  authDomain: "firecodes-arrastrados.firebaseapp.com",
+  databaseURL: "https://firecodes-arrastrados.firebaseio.com",
+  projectId: "firecodes-arrastrados",
+  storageBucket: "firecodes-arrastrados.appspot.com",
+  messagingSenderId: "561640733546"
+
+});
+
+export const FirebaseConfig = {
+  apiKey: "AIzaSyAwnufxibhSVmD2Zu5mI_9x0WoFmQ0KctY",
+  authDomain: "firecodes-arrastrados.firebaseapp.com",
+  databaseURL: "https://firecodes-arrastrados.firebaseio.com",
+  projectId: "firecodes-arrastrados",
+  storageBucket: "firecodes-arrastrados.appspot.com",
+  messagingSenderId: "561640733546"
+
+};
 
 @NgModule({
   declarations: [
@@ -49,7 +82,13 @@ export function provideSettings(storage: Storage) {
       }
     }),
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+
+    AngularFireModule.initializeApp(FirebaseConfig),
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -59,9 +98,11 @@ export function provideSettings(storage: Storage) {
     Api,
     Items,
     User,
+    GooglePlus,
     Camera,
     SplashScreen,
     StatusBar,
+    ServicioService,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler }

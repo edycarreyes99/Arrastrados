@@ -1,10 +1,11 @@
+import {GooglePlus} from '@ionic-native/google-plus';
 import { Component } from '@angular/core';
 
 import * as firebase from 'firebase';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from "rxjs/Observable";
 
-import { GooglePlus } from "@ionic-native/google-plus";
+
 import { Platform } from "ionic-angular";
 
 /**
@@ -39,12 +40,17 @@ export class GoogleLoginComponent {
     }
   }
 
-  async nativeGoogleSignin(): Promise<void> {
+  async nativeGoogleSignin(): Promise<any> {
     try {
       const gplusUser = await this.gplus.login({
         'webClientId': '561640733546-gu66lvu52mcac2jiq80qvq0go530a3f1.apps.googleusercontent.com',
+        'secret' : 'Usxv6j_rI7sq0ngj9x-NdnbS',
         'offline': true,
-        'scopes': 'profile-email'
+        'scopes': ["https://www.googleapis.com/auth/userinfo.email",
+          "https://www.googleapis.com/auth/userinfo.profile",
+          "https://www.google.com/m8/feeds",
+          "https://www.google.com/calendar/feeds",
+          "https://www.googleapis.com/auth/gmail.readonly"]
       });
 
       return await this.afauth.auth.signInWithCredential(firebase.auth.GoogleAuthProvider.credential(gplusUser.idToken))

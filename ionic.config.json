@@ -1,5 +1,11 @@
 {
   "name": "Arrastrados",
+  "proxies":[
+    {
+      "path": "/api",
+      "proxyUrl":"http://cors.api.com/api"
+    }
+  ],
   "integrations": {
     "cordova": {}
   },

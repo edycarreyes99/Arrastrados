@@ -7,16 +7,21 @@
 </ion-header>
 
 
-<ion-content>
-  <form (submit)="doLogin()">
-    <ion-list>
+<ion-content style="margin: auto;" padding="true">
+  <ion-card>
 
-      <ion-item>
-        <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
-        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
-      </ion-item>
+    <img style="height: 200px; margin: auto; width: 200px;" src="../../assets/img/LogotipoConCirculo.png">
 
-      <!--
+    <ion-card-content>
+      <form (submit)="doLogin()">
+        <ion-list>
+
+          <ion-item>
+            <ion-label floating>{{ 'EMAIL' | translate }}</ion-label>
+            <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
+          </ion-item>
+
+          <!--
       Want to use a Username instead of an Email? Here you go:
 
       <ion-item>
@@ -25,17 +30,54 @@
       </ion-item>
       -->
 
-      <ion-item>
-        <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
-        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
-      </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'PASSWORD' | translate }}</ion-label>
+            <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+          </ion-item>
+        </ion-list>
+      </form>
+      <ion-row>
+        <ion-col>
+          <div padding>
+            <button ion-button color="primary" block (tap)="emailLogin()">{{ 'LOGIN_BUTTON' | translate }}</button>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div padding>
+            <button ion-button color="primary" block (tap)="postMan()">PostMan</button>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div padding>
+            <button ion-button color="danger" block (tap)="googleLogin()">
+              <ion-icon name="logo-googleplus" padding item-left></ion-icon>
+              Google
+            </button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
 
-      <div padding>
-        <button ion-button color="primary" block>{{ 'LOGIN_BUTTON' | translate }}</button>
-      </div>
+  <ion-item *ngIf="userProfile">
+    <ion-avatar item-left>
+      <img [src]="userProfile.photoURL">
+    </ion-avatar>
+    <h2>{{ userProfile.displayName }}</h2>
+    <h3>{{ userProfile.email }}</h3>
+    <button ion-button (tap)="signOut()" padding>Signout</button>
+  </ion-item>
 
-    </ion-list>
-  </form>
+  <!--<div *ngIf="(userr | async) || {} as user">
+    <button ion-button *ngIf="!user.uid" (tap)="googleLogin()">Login with Google</button>
+    <div *ngIf="user.uid">
+      You're already logged in with UID: {{user.uid}}
 
-  <google-login></google-login>
+      <button ion-button (tap)="signOut()">Signout</button>
+    </div>
+  </div>-->
 </ion-content>

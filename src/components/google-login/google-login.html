@@ -1,4 +1,4 @@
-<div *ngI="(user | async) || {} as user">
+<div *ngIf="(userr | async) || {} as user">
   <button ion-button *ngIf="!user.uid" (tap)="googleLogin()">Login with Google</button>
   <div *ngIf="user.uid">
     You're already logged in with UID: {{user.uid}}

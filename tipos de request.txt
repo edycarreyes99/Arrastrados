@@ -1,0 +1,29 @@
+1. Pin y Carnet Olvidado:
+    Metodo: Post
+    url : https://matricula.unanleon.edu.ni/main/consultar_carnet_pin
+    variables : nombres, apellidos, fecha_nacimiento
+
+2. Consulta de Matricula (Ingresar)
+    Metodo: Post
+    url: https://matricula.unanleon.edu.ni/main/ingresar
+    variables: carnet, pin
+
+3. Consulta de Matricula (Comprobante de Ultima Matricula)
+    Metodo: Get
+    url: https://matricula.unanleon.edu.ni/matricula/obtener_datos_comprobante
+    variables: ninguna
+
+4. Consulta de Matricula (Estado de login)
+    Metodo: Get
+    url: https://matricula.unanleon.edu.ni/main/estado
+    variables: ninguna
+
+5. Consulta de Notas:
+    Metodo: Post
+    url: https://portalestudiantes.unanleon.edu.ni/consulta_estudiantes.php
+    variables: carnet, pin, anyo_lec, tipo = en blanco, mandar = Visualizar, npag = 2
+
+6. Consulta de Pentsums Academicos:
+    Metodo: Post
+    url: https://portalestudiantes.unanleon.edu.ni/listar.php
+    variables: facultad, carrera, plan, enviar = Visualizar

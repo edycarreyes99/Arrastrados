@@ -1,6 +1,7 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { Camera } from '@ionic-native/camera';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -22,6 +23,9 @@ import { ServicioService } from "../servicio.service";
 
 //Third Part Login Imports
 import { GooglePlus } from "@ionic-native/google-plus";
+
+//Statics third part Imports
+import { IonicStepperModule } from 'ionic-stepper';
 
 import { Items } from '../mocks/providers/items';
 import { Settings, User, Api } from '../providers';
@@ -73,6 +77,7 @@ export const FirebaseConfig = {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -81,11 +86,12 @@ export const FirebaseConfig = {
         deps: [HttpClient]
       }
     }),
+    IonicStepperModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
 
     AngularFireModule.initializeApp(FirebaseConfig),
-    AngularFirestoreModule.enablePersistence(),
+    AngularFirestoreModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireStorageModule

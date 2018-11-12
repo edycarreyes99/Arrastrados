@@ -8,37 +8,63 @@
 
 
 <ion-content>
-  <form (submit)="doSignup()">
-    <ion-list>
+  <ion-stepper #stepper (selectIndexChange)="selectChange($event)">
+    <ion-step label="Información sobre la Cuenta" description="Email, Contraseña, Etc.">
+      <ion-card>
 
-      <ion-item>
-        <ion-label fixed>{{ 'NAME' | translate }}</ion-label>
-        <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>
-      </ion-item>
+        <img style="height: 200px; margin: auto; width: 200px;" src="../../assets/img/LogotipoConCirculo.png">
 
-      <ion-item>
-        <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
-        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
-      </ion-item>
+        <ion-card-content>
+          <form>
+            <ion-list>
 
-      <!--
-      Want to add a Username? Here you go:
+              <ion-item>
+                <ion-label floating>Ingrese su nuevo E-Mail</ion-label>
+                <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
+              </ion-item>
 
-      <ion-item>
-        <ion-label floating>Username</ion-label>
-        <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
-      </ion-item>
-      -->
+              <ion-item>
+                <ion-label floating>Ingrese su nueva Contraseña</ion-label>
+                <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+              </ion-item>
+            </ion-list>
+          </form>
+        </ion-card-content>
+      </ion-card>
+      <button ion-button small ionicStepperNext>Siguiente</button>
+    </ion-step>
+    <ion-step label="Informacion Personal" description="Nombres, Apellidos, Etc.">
+      <form>
+        <ion-list>
 
-      <ion-item>
-        <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
-        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
-      </ion-item>
+          <ion-item>
+            <ion-label floating>Ingrese sus Nombres</ion-label>
+            <ion-input type="text" [(ngModel)]="nombres" name="nombres"></ion-input>
+          </ion-item>
 
-      <div padding>
-        <button ion-button color="primary" block>{{ 'SIGNUP_BUTTON' | translate }}</button>
-      </div>
-
-    </ion-list>
-  </form>
+          <ion-item>
+            <ion-label floating>Ingrese sus Apellidos</ion-label>
+            <ion-input type="text" [(ngModel)]="apellidos" name="apellidos"></ion-input>
+          </ion-item>
+        </ion-list>
+      </form>
+      <button ion-button color="light" small ionicStepperPrevious>Anterior</button>
+      <button ion-button small ionicStepperNext>Siguiente</button>
+    </ion-step>
+    <ion-step label="Estilo de la cuenta" description="Imagen de Perfil">
+      <form *ngIf="form" [formGroup]="form" (ngSubmit)="createItem()">
+        <input type="file" #fileInput style="visibility: hidden; height: 0px" name="files[]" (change)="processWebImage($event)" />
+        <div class="profile-image-wrapper" (click)="getPicture()">
+          <div class="profile-image-placeholder" *ngIf="!this.form.controls.profilePic.value">
+            <ion-icon name="add"></ion-icon>
+            <div>
+              {{ 'ITEM_CREATE_CHOOSE_IMAGE' | translate }}
+            </div>
+          </div>
+          <div class="profile-image" [style.backgroundImage]="getProfileImageStyle()" *ngIf="this.form.controls.profilePic.value"></div>
+        </div>
+      </form>
+      <button ion-button color="light" small ionicStepperPrevious>Anterior</button>
+    </ion-step>
+  </ion-stepper>
 </ion-content>

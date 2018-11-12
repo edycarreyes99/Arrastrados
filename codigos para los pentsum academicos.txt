@@ -1,0 +1,191 @@
+1. Facultad: CIENCIAS AGRARIAS Y VETERINARIAS
+    Codigo_Facultad: 19
+        Carreras:
+            1. INGENIERIA ACUICOLA[REGULAR]
+                Codigo_Carrera: 195
+                Planes:
+                    1. Codigo: 1952005
+                    2. Codigo: 1952007
+                    3. Codigo: 1952011
+
+            2. INGENIERIA AGROECOLOGICA[REGULAR]
+                Codigo_Carrera: 082
+                Planes:
+                    1. Codigo: 0822007
+                    2. Codigo: 0822001
+                    3. Codigo: 0822011
+                    4. Codigo: 0822017
+
+            3. INGENIERIA EN AGROECOLOGIA TROPICAL[SABATINA]
+                Codigo_Carrera: 635
+                Planes: 
+                    1. Codigo: 6350
+
+            4. INGENIERIA EN AGRONEGOCIOS[SABATINA]
+                Codigo_Carrera: 601
+                Planes:
+                    1. Codigo: 6012017
+
+            5. INGENIERIA EN AGRONEGOCIOS[VIRTUAL]
+                Codigo_Carrera: 614
+                Planes:
+                    1. 6142017
+
+            6. INGENIERIA EN ZOOTECNIA[REGULAR]
+                Codigo_Carrera: 602
+                Planes:
+                    1. 6022017
+
+            7. TECNICO SUPERIOR AGROPECUARIO[SABATINA]
+                Codigo_Carrera: 600
+                Planes:
+                    1. 6002009
+                    2. 6002017
+
+            8. TECNICO SUPERIOR EN ACUICULTURA[SABATINA]
+                Codigo_Carrera: 636
+                Planes:
+                    1. 6360
+
+            9. VETERINARIA[REGULAR]
+                Codigo_Carrera: 080
+                Planes: 
+                    1. 0802007
+                    2. 0802004
+                    3. 0802011
+
+2. Facultad: CIENCIAS DE LA EDUCACION
+    Codigo_Facultad: 06
+        Carreras:
+            1. CIENCIAS DE LA EDUCACION CON MENCION EN EDUCACION ESPECIAL INCLUYENTE[SABATINA]
+                Codigo_Carrera: 628
+                Planes:
+                    1. 6282018
+
+            2. CIENCIAS NATURALES (PEM)[REGULAR]
+                Codigo_Carrera: 200
+                Planes:
+                    1. 2002002
+                    2. 2002007
+                    3. 2002011
+
+            3. CIENCIAS NATURALES (SABAT[SABATINA]
+                Codigo_Carrera: 206
+                Planes:
+                    1. 2062002
+                    2. 2062008
+                    3. 2062011
+                    4. 2062011A
+
+            4. CIENCIAS SOCIALES (PEM)[REGULAR]
+                Codigo_Carrera: 202
+                Planes:
+                    1. 2022003
+                    2. 2022008
+                    3. 2022007
+                    4. 2022011
+                    5. 2022007A
+
+            5. CIENCIAS NATURALES (SABATI[SABATINA]
+                Codigo_Carrera: 095
+                Planes:
+                    1. 0951998
+                    2. 0952008
+                    3. 0952006
+                    4. 0952011
+                    5. 0952007A
+                    6. 0952011A
+
+            6. COMUNICACION SOCIAL[REGULAR]
+                Codigo_Carrera: 371
+                Planes:
+                    1. 3712007
+                    2. 3712011
+
+            7. EDUCACION FISICA (PEM)[REGULAR]
+                Codigo_Carrera: 396
+                Planes:
+                    1. 3962007
+                    2. 3962008
+                    3. 3962011
+
+            8. EDUCACION FISICA (SAB)[SABATINA]
+                Codigo_Carrera: 210
+                Planes:
+                    1. 2102008
+                    2. 2102007
+                    3. 2102011
+                    4. 2102011A
+
+            9. EXPRESION CULTURAL ARTISTICA[SABATINA]
+                Codigo_Carrera: 212
+                Planes:
+                    1. 2122011
+
+            10. FISICO-MATEMATICA[SABATINA]
+                Codigo_Carrera: 211
+                Planes:
+                    1. 2112011
+
+            11. INGLES (DIURNO)[REGULAR]
+                Codigo_Carrera: 108
+                Planes:
+                    1. 1082003
+                    2. 1082007
+                    3. 1082011
+
+            12. INGLES (SABATINO)[SABATINA]
+                Codigo_Carrera: 008
+                Planes:
+                    1. 0082002
+                    2. 0082007
+                    3. 0082011
+                    4. 0082011A
+
+            13. LENGUA Y LITERATURA (PEM)[REGULAR]
+                Codigo_Carrera: 203
+                Planes:
+                    1. 2032002
+                    2. 2032007
+                    3. 2032011
+
+            14. LENGUA Y LITERATURA (SAB)[SABATINA]
+                Codigo_Carrera: 204
+                Planes:
+                    1. 2042002
+                    2. 2042007
+                    3. 2042011
+                    4. 2042011A
+
+            15. LICENCIATURA EN CIENCIAS DE LA EDUCACION CON MENCIONE EN INGLES[VIRTUAL]
+                Codigo_Carrera: 611
+                Planes:
+                    1. 6112017
+
+            16. LICENCIATURA EN CIENCIAS DE LA EDUCACION CON MENCIONE EN EDUCACION PRIMARIA[VIRTUAL]
+                Codigo_Carrera: 612
+                Planes:
+                    1. 6122017
+
+            17. LICENCIATURA EN TRABAJO SOCIAL[VIRTUAL]
+                Codigo_Carrera: 613
+                Planes:
+                    1. 6132017
+
+3. Facultad:  CIENCIAS ECONOMICAS
+    Codigo_Facultad: 22
+        Carreras:
+            1. ADMINISTRACION DE EMP.[REGULAR]
+                Codigo_Carrera: 061
+                Planes:
+                    1. 0612001
+                    2. 0612007
+                    3. 0612011
+                    4. 061ADM
+
+            2. ADMINISTRACION(SAB)(SINACAM)[SABATINA]
+                Codigo_Carrera: 165
+                Planes:
+                    1. 1652013
+
+            3. ADMON. EMPRESAS (SABATINO[SABATINA]
